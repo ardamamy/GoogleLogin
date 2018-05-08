@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "995327022982",
+    "firebase_url": "https://login-c5ae3.firebaseio.com",
+    "project_id": "login-c5ae3",
+    "storage_bucket": "login-c5ae3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:995327022982:android:4e15626419ed3174",
+        "android_client_info": {
+          "package_name": "tw.edu.niu.googlelogin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "995327022982-q57b7nm9ehmaophghj1kaovhc9tlldb3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "tw.edu.niu.googlelogin",
+            "certificate_hash": "33242554ac905ccfc3113931c4c0403946a26706"
+          }
+        },
+        {
+          "client_id": "995327022982-s251c41d6ia1iietqnrb78orcu5vuc2b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBf3OnvHZS9kBcIHTUVXoud3WdJ10LzBsk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "995327022982-s251c41d6ia1iietqnrb78orcu5vuc2b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
