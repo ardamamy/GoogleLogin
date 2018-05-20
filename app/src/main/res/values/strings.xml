@@ -3,4 +3,5 @@
     <string name="title_activity_homepage">HomepageActivity</string>
     <string name="signed_in_fmt">successful</string>
     <string name="title_activity_calender">CalenderActivity</string>
+    <string name="title_activity_myself">MyselfActivity</string>
 </resources>

@@ -21,6 +21,7 @@ public class HomePageActivity extends AppCompatActivity {
     ImageButton data_button;
     ImageButton mate_button;
     ImageButton money_button;
+    Button myself_button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,7 +31,7 @@ public class HomePageActivity extends AppCompatActivity {
         data_button = (ImageButton)findViewById(R.id.data_button);
         mate_button = (ImageButton)findViewById(R.id.mate_button);
         money_button = (ImageButton)findViewById(R.id.money_button);
-
+        myself_button =(Button)findViewById(R.id.myself_button);
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
                 .build();
@@ -91,6 +92,15 @@ public class HomePageActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Toast.makeText(HomePageActivity.this,"MoneyEnter",Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(HomePageActivity.this,MoneyActivity.class);
+                finish();
+                startActivity(intent);
+            }
+        });
+        myself_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(HomePageActivity.this,"MyselfEnter",Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(HomePageActivity.this,MyselfActivity.class);
                 finish();
                 startActivity(intent);
             }
