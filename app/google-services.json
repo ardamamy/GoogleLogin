@@ -15,12 +15,20 @@
       },
       "oauth_client": [
         {
+          "client_id": "995327022982-f61f3t1hfrpbhrg8ocnmui1a8eqfb223.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
           "client_id": "995327022982-q57b7nm9ehmaophghj1kaovhc9tlldb3.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "tw.edu.niu.googlelogin",
             "certificate_hash": "33242554ac905ccfc3113931c4c0403946a26706"
           }
+        },
+        {
+          "client_id": "995327022982-s251c41d6ia1iietqnrb78orcu5vuc2b.apps.googleusercontent.com",
+          "client_type": 3
         },
         {
           "client_id": "995327022982-s251c41d6ia1iietqnrb78orcu5vuc2b.apps.googleusercontent.com",
@@ -40,7 +48,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "995327022982-s251c41d6ia1iietqnrb78orcu5vuc2b.apps.googleusercontent.com",
+              "client_id": "995327022982-f61f3t1hfrpbhrg8ocnmui1a8eqfb223.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

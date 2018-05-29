@@ -98,7 +98,7 @@ public class LoginActivity extends AppCompatActivity {
             Log.i("mylog",account.getDisplayName());
             Log.d("mylog", "handleSignInResult:" + completedTask.isSuccessful());
             if( completedTask.isSuccessful()){
-                Intent mIntent = new Intent(LoginActivity.this,HomePageActivity.class);
+                Intent mIntent = new Intent(LoginActivity.this,MainActivity.class);
                 finish();
                 startActivity(mIntent);
                 //updateUI(account);
@@ -128,15 +128,27 @@ public class LoginActivity extends AppCompatActivity {
 //            findViewById(R.id.sign_out_and_disconnect).setVisibility(View.GONE);
 //        }
 //    }
-private void signOut() {
-    mGoogleSignInClient.signOut()
-            .addOnCompleteListener(this, new OnCompleteListener<Void>() {
+    private void signOut() {
+        mGoogleSignInClient.signOut()
+                .addOnCompleteListener(this, new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
                     // [START_EXCLUDE]
                    // updateUI(null);
                     // [END_EXCLUDE]
-                }
+                    }
             });
-}
+    }
+    // [START revokeAccess]
+    private void revokeAccess() {
+        mGoogleSignInClient.revokeAccess()
+                .addOnCompleteListener(this, new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        // [START_EXCLUDE]
+                        //updateUI(null);
+                        // [END_EXCLUDE]
+                    }
+                });
+    }
 }

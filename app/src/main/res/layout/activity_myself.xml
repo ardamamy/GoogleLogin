@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="34dp"
         android:ems="10"
         android:hint="請輸入名字"
         android:inputType="textPersonName"
@@ -36,6 +36,31 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="78dp"
+        android:layout_marginBottom="66dp"
         android:text="設定" />
+
+    <EditText
+        android:id="@+id/department"
+        android:layout_width="285dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="179dp"
+        android:ems="10"
+        android:hint="請輸入系別(ex.資工系羽)"
+        android:inputType="textPersonName"
+        android:textSize="24sp" />
+
+    <Spinner
+        android:id="@+id/spinsex"
+        android:layout_width="279dp"
+        android:layout_height="61dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="242dp"
+        android:entries="@array/sex_list"
+        android:prompt="@string/spn_sex_list_prompt"
+        tools:ignore="RtlCompat" />
+
+
 </RelativeLayout>

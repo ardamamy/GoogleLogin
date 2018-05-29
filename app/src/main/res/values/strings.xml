@@ -4,4 +4,10 @@
     <string name="signed_in_fmt">successful</string>
     <string name="title_activity_calender">CalenderActivity</string>
     <string name="title_activity_myself">MyselfActivity</string>
+    <string-array name="sex_list">
+        <item>(輸入性別)</item>
+        <item>男</item>
+        <item>女</item>
+    </string-array>
+    <string name="spn_sex_list_prompt">請選擇性別</string>
 </resources>

@@ -1,5 +1,6 @@
 package tw.edu.niu.googlelogin;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.firebase.client.Firebase;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -40,21 +42,29 @@ public class MyselfActivity extends AppCompatActivity {
                 FirebaseFirestore db = FirebaseFirestore.getInstance();
                 // Create a new user with a first and last name
                 Map<String, Object> user = new HashMap<>();
-                final User ardam = new User();
+                final User ardam = new User("","","","");
                 try{
                     ardam.setName(username.getText().toString());
                     ardam.setNumber(usernumber.getText().toString());
                 }catch (Exception e){
                     error = true;
                 }
-                if(!error){
-
+                if(!error) {
                     db.collection("users")
                             .add(ardam)
                             .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                                 @Override
                                 public void onSuccess(DocumentReference documentReference) {
                                     Log.d("mytag", "DocumentSnapshot added with ID: " + documentReference.getId());
+                                    Toast.makeText(MyselfActivity.this, "設定成功", Toast.LENGTH_LONG).show();
+                                    Intent intent = new Intent();
+
+                                    Bundle bundle = new Bundle();
+                                    bundle.putSerializable("User ", ardam);
+                                    intent.putExtra("ardam",bundle);
+                                    intent.setClass(MyselfActivity.this,HomePageActivity.class);
+                                    finish();
+                                    startActivity(intent);
                                 }
                             })
                             .addOnFailureListener(new OnFailureListener() {
@@ -63,7 +73,7 @@ public class MyselfActivity extends AppCompatActivity {
                                     Log.w("mytag", "Error adding document", e);
                                 }
                             });
-                }else {
+                } else {
                 }
             }
         });

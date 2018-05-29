@@ -22,6 +22,7 @@
             </intent-filter>
         </activity>
 
+
         <service android:name=".MyMessengerRecieveService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
@@ -45,13 +46,13 @@
             android:resource="@color/colorAccent" />
 
         <activity android:name=".SignUpActivity" />
-        <activity android:name=".MainActivity" />
         <activity android:name=".HomePageActivity" />
         <activity android:name=".CalenderActivity" />
         <activity android:name=".DataActivity" />
         <activity android:name=".MateActivity" />
         <activity android:name=".MoneyActivity" />
-        <activity android:name=".MyselfActivity"></activity>
+        <activity android:name=".MyselfActivity" />
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>

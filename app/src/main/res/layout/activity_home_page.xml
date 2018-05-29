@@ -6,106 +6,63 @@
     android:layout_height="match_parent"
     tools:context="tw.edu.niu.googlelogin.HomePageActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/signout"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="102dp"
-        android:text="Homepage"
-        android:textSize="18sp" />
 
     <Button
         android:id="@+id/signout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
-        android:text="登出" />
+        android:text="登出"
+        android:layout_alignParentRight="true" />
 
     <ImageButton
         android:id="@+id/mate_button"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:layout_below="@+id/textView"
-        android:layout_marginTop="41dp"
-        android:layout_toEndOf="@+id/race_button"
-        android:layout_toRightOf="@+id/race_button"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="103dp"
         android:background="@drawable/ovalbutton"
         android:scaleType="fitCenter"
-        app:srcCompat="@drawable/andriod" />
+        app:srcCompat="@drawable/andriod"
+        android:layout_marginRight="103dp"
+        android:layout_alignParentRight="true" />
 
     <ImageButton
         android:id="@+id/money_button"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:layout_alignTop="@+id/mate_button"
-        android:layout_toEndOf="@+id/field_button"
-        android:layout_toRightOf="@+id/field_button"
+        android:layout_alignStart="@+id/signout"
+        android:layout_centerVertical="true"
         android:background="@drawable/ovalbutton"
-        app:srcCompat="@drawable/money" />
+        app:srcCompat="@drawable/money"
+        android:layout_alignLeft="@+id/signout" />
 
     <ImageButton
         android:id="@+id/data_button"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:layout_alignTop="@+id/mate_button"
-        android:layout_toEndOf="@+id/team_button"
-        android:layout_toRightOf="@+id/team_button"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="109dp"
         android:background="@drawable/ovalbutton"
         android:scaleType="centerInside"
-        app:srcCompat="@drawable/data" />
+        app:srcCompat="@drawable/data"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="109dp" />
 
     <ImageButton
         android:id="@+id/calender_button"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignTop="@+id/data_button"
-        android:layout_marginLeft="31dp"
-        android:layout_marginStart="31dp"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="26dp"
         android:background="@drawable/ovalbutton"
         android:scaleType="centerCrop"
-        app:srcCompat="@drawable/calendar" />
-
-    <Button
-        android:id="@+id/team_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/calender_button"
-        android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/calender_button"
-        android:text="球隊" />
-
-    <Button
-        android:id="@+id/race_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_toEndOf="@+id/team_button"
-        android:layout_toRightOf="@+id/team_button"
-        android:text="賽事" />
-
-    <Button
-        android:id="@+id/field_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_toEndOf="@+id/race_button"
-        android:layout_toRightOf="@+id/race_button"
-        android:text="球場" />
-
-    <Button
-        android:id="@+id/myself_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_toEndOf="@+id/field_button"
-        android:layout_toRightOf="@+id/field_button"
-        android:text="關於自己" />
-
+        app:srcCompat="@drawable/calendar"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="26dp" />
 
 </RelativeLayout>
