@@ -10,18 +10,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.firebase.client.Firebase;
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import tw.edu.niu.googlelogin.model.User;
 
 public class MyselfActivity extends AppCompatActivity {
     EditText username;
@@ -42,7 +39,7 @@ public class MyselfActivity extends AppCompatActivity {
                 FirebaseFirestore db = FirebaseFirestore.getInstance();
                 // Create a new user with a first and last name
                 Map<String, Object> user = new HashMap<>();
-                final User ardam = new User("","","","");
+                final User ardam = new User("","","","","","","","");
                 try{
                     ardam.setName(username.getText().toString());
                     ardam.setNumber(usernumber.getText().toString());

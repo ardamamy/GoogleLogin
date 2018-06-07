@@ -14,7 +14,8 @@ public class FragmentList_Three extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragmentlist_three, container, false);
+        View view = inflater.inflate(R.layout.train_menu, container, false);
+
 
 
         return view;

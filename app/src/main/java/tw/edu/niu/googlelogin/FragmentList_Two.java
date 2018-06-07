@@ -28,11 +28,12 @@ import java.util.Map;
             */
 
     public class FragmentList_Two extends Fragment {
-    EditText username;
-    EditText usernumber;
-    EditText userdepartment;
-    Button setup;
-    boolean error = false;
+    private  EditText username;
+    private EditText usernumber;
+    private EditText userdepartment;
+    private Button setup;
+    private boolean error = false;
+    private FirebaseFirestore db = FirebaseFirestore.getInstance();
     @Override
     public Context getContext() {
         return super.getContext();
@@ -92,53 +93,53 @@ import java.util.Map;
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             View view = inflater.inflate(R.layout.activity_myself, container, false);
-            setup = view.findViewById(R.id.button);
-            username =view.findViewById(R.id.name);
-            usernumber =view.findViewById(R.id.number);
-            userdepartment = view.findViewById(R.id.department);
-        setup.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FirebaseFirestore db = FirebaseFirestore.getInstance();
-                // Create a new user with a first and last name
-                Map<String, Object> user = new HashMap<>();
-                final User ardam = new User("","","","");
-                try{
-                    ardam.setName(username.getText().toString());
-                    ardam.setNumber(usernumber.getText().toString());
-                    ardam.setDepartment(userdepartment.getText().toString());
-                }catch (Exception e){
-                    error = true;
-                }
-                if(!error) {
-                    db.collection("users")
-                            .add(ardam)
-                            .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                                @Override
-                                public void onSuccess(DocumentReference documentReference) {
-                                    Log.d("mytag", "DocumentSnapshot added with ID: " + documentReference.getId());
-                                    Toast.makeText(getActivity(), "設定成功", Toast.LENGTH_LONG).show();
-//                                    Intent intent = new Intent();
+//            setup = view.findViewById(R.id.button);
+//            username =view.findViewById(R.id.name);
+//            usernumber =view.findViewById(R.id.number);
+//            userdepartment = view.findViewById(R.id.department);
+//        setup.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
 //
-//                                    Bundle bundle = new Bundle();
-//                                    bundle.putSerializable("User ", ardam);
-//                                    intent.putExtra("ardam",bundle);
-//                                    intent.setClass(getActivity(),HomePageActivity.class);
-//                                    getActivity().finish();
-//                                    startActivity(intent);
-                                }
-                            })
-                            .addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
-                                    Log.w("mytag", "Error adding document", e);
-                                }
-                            });
-                } else {
-                }
-            }
-        });
-
+//                // Create a new user with a first and last name
+//                Map<String, Object> user = new HashMap<>();
+//                final User ardam = new User("","","","");
+//                try{
+//                    ardam.setName(username.getText().toString());
+//                    ardam.setNumber(usernumber.getText().toString());
+//                    ardam.setDepartment(userdepartment.getText().toString());
+//                }catch (Exception e){
+//                    error = true;
+//                }
+//                if(!error) {
+//                    db.collection("users")
+//                            .add(ardam)
+//                            .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+//                                @Override
+//                                public void onSuccess(DocumentReference documentReference) {
+//                                    Log.d("mytag", "DocumentSnapshot added with ID: " + documentReference.getId());
+//                                    Toast.makeText(getActivity(), "設定成功", Toast.LENGTH_LONG).show();
+////                                    Intent intent = new Intent();
+////
+////                                    Bundle bundle = new Bundle();
+////                                    bundle.putSerializable("User ", ardam);
+////                                    intent.putExtra("ardam",bundle);
+////                                    intent.setClass(getActivity(),HomePageActivity.class);
+////                                    getActivity().finish();
+////                                    startActivity(intent);
+//                                }
+//                            })
+//                            .addOnFailureListener(new OnFailureListener() {
+//                                @Override
+//                                public void onFailure(@NonNull Exception e) {
+//                                    Log.w("mytag", "Error adding document", e);
+//                                }
+//                            });
+//                } else {
+//                }
+//            }
+//        });
+//
             return view;
-        }
+      }
 }

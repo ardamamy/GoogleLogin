@@ -15,13 +15,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".LoginActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
-
 
         <service android:name=".MyMessengerRecieveService">
             <intent-filter>
@@ -52,7 +47,16 @@
         <activity android:name=".MateActivity" />
         <activity android:name=".MoneyActivity" />
         <activity android:name=".MyselfActivity" />
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".WelcomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".TeamSelectActivity" />
+        <activity android:name=".TeamCreateActivity"></activity>
     </application>
 
 </manifest>

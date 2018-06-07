@@ -8,7 +8,7 @@
 
     <EditText
         android:id="@+id/name"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
@@ -20,7 +20,7 @@
 
     <EditText
         android:id="@+id/number"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/name"
         android:layout_centerHorizontal="true"
@@ -41,7 +41,7 @@
 
     <EditText
         android:id="@+id/department"
-        android:layout_width="285dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
@@ -53,14 +53,23 @@
 
     <Spinner
         android:id="@+id/spinsex"
-        android:layout_width="279dp"
-        android:layout_height="61dp"
+        android:layout_width="match_parent"
+        android:layout_height="41dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="242dp"
         android:entries="@array/sex_list"
         android:prompt="@string/spn_sex_list_prompt"
         tools:ignore="RtlCompat" />
+
+    <Spinner
+        android:id="@+id/spinnerCop"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/spinsex"
+        android:entries="@array/cop_list"
+        android:prompt="@string/spn_cop_list_prompt" />
 
 
 </RelativeLayout>
