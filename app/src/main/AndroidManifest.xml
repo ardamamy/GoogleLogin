@@ -55,7 +55,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TeamSelectActivity" />
+        <activity android:name=".TeamSelectActivity" >
+
+        </activity>
         <activity android:name=".TeamCreateActivity"></activity>
     </application>
 

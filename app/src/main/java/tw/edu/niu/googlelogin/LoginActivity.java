@@ -56,7 +56,12 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 switch (v.getId()) {
                     case R.id.sign_in_button:
-                        signIn();
+                        try {
+                            signIn();
+                        }catch (Exception e){
+                            Log.d("mylog","sigin error");
+                        }
+
                         //System.out.print("successful");
                         break;
                     // ...

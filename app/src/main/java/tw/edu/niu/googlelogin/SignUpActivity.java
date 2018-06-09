@@ -83,7 +83,7 @@ public class SignUpActivity extends AppCompatActivity {
                         user.setGender(strgender);
                         user.setDepartment(edepartment.getText().toString());
                         user.setUserId(firebaseUser.getUid().toString());
-                        user.setRole("member");
+
                     }
 
                 }catch(Exception e){

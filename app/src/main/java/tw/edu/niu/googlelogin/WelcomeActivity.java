@@ -1,11 +1,15 @@
 package tw.edu.niu.googlelogin;
 
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Handler;
 import android.support.annotation.NonNull;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.firebase.client.Firebase;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -22,9 +26,10 @@ import com.google.firebase.firestore.QuerySnapshot;
 import javax.annotation.Nullable;
 
 public class WelcomeActivity extends AppCompatActivity {
-
+    ImageView imageView;
+    AnimationDrawable animationDrawable;
     private FirebaseAuth mAuth;
-    private int delay = 3000;
+    private int delay = 3200;
     FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
     private final FirebaseFirestore db = FirebaseFirestore.getInstance();
     String stringUID = "";
@@ -50,7 +55,11 @@ public class WelcomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
-        //mAuth = FirebaseAuth.getInstance();
+        mAuth = FirebaseAuth.getInstance();
+        imageView  =  findViewById(R.id.imageView);
+        imageView.setBackgroundResource(R.drawable.img);
+        animationDrawable = (AnimationDrawable) imageView.getBackground();
+        animationDrawable.start();
 
     }
 
@@ -63,6 +72,19 @@ public class WelcomeActivity extends AppCompatActivity {
                 Log.i("mylog","fuckyou");
                 if(documentSnapshot.exists()){
                     Log.i("mylog","fuckyoubeach");
+                    if(documentSnapshot.get("teamID") != null && !documentSnapshot.get("teamID").toString().equals("")){
+                        //TODO 使用者已經有所屬球隊
+                        Log.i("mylog","使用者已經有所屬球隊");
+                        Intent intent = new Intent(WelcomeActivity.this,MainActivity.class);
+                        startActivity(intent);
+                        finish();
+                    }else {
+                        // TODO 使用者沒有所屬球隊
+                        Log.i("mylog","使用者沒有所屬球隊");
+                        Intent intent = new Intent(WelcomeActivity.this, TeamSelectActivity.class);
+                        startActivity(intent);
+                        finish();
+                    }
                 }else{
                     Intent intent = new Intent(WelcomeActivity.this,SignUpActivity.class);
                     startActivity(intent);
@@ -74,28 +96,9 @@ public class WelcomeActivity extends AppCompatActivity {
             @Override
             public void onFailure(@NonNull Exception e) {
                 Log.i("mylog","fuckyoufather");
-                //TODO 顯示錯誤給使用者知道
+                Toast.makeText(WelcomeActivity.this, "發生錯誤", Toast.LENGTH_LONG).show();//TODO 顯示錯誤給使用者知道
             }
         });
-//        Query query = db.collection("users").whereEqualTo("userId", firebaseUser.getUid());
-//       query.addSnapshotListener(WelcomeActivity.this, new EventListener<QuerySnapshot>() {
-//               @Override
-//               public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException e) {
-//                   Object teamObj = documentSnapshot.get("teamID");
-//                   if(teamObj != null && !teamObj.toString().equals("")){
-//                       //TODO 使用者已經有所屬球隊
-//                       Intent intent = new Intent(WelcomeActivity.this,MainActivity.class);
-//                       startActivity(intent);
-//                       finish();
-//                   }else{
-//                       // TODO 使用者沒有所屬球隊
-//                       Intent intent = new Intent(WelcomeActivity.this,TeamSelectActivity.class);
-//                       startActivity(intent);
-//                       finish();
-////                        }
-//                   }
-//               });
-
 //        Query query = db.collection("users").whereEqualTo("userId", firebaseUser.getUid());
 //        //Query query = db.collection("users").document(""+firebaseUser.getUid());
 //        query.addSnapshotListener(WelcomeActivity.this, new EventListener<QuerySnapshot>() {
