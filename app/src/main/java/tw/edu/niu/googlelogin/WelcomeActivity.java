@@ -74,12 +74,14 @@ public class WelcomeActivity extends AppCompatActivity {
                     Log.i("mylog","fuckyoubeach");
                     if(documentSnapshot.get("teamID") != null && !documentSnapshot.get("teamID").toString().equals("")){
                         //TODO 使用者已經有所屬球隊
+                        Toast.makeText(WelcomeActivity.this, "您已有所屬球隊", Toast.LENGTH_LONG).show();
                         Log.i("mylog","使用者已經有所屬球隊");
                         Intent intent = new Intent(WelcomeActivity.this,MainActivity.class);
                         startActivity(intent);
                         finish();
                     }else {
                         // TODO 使用者沒有所屬球隊
+                        Toast.makeText(WelcomeActivity.this,"您還未加入任何球隊",Toast.LENGTH_LONG).show();
                         Log.i("mylog","使用者沒有所屬球隊");
                         Intent intent = new Intent(WelcomeActivity.this, TeamSelectActivity.class);
                         startActivity(intent);
@@ -96,7 +98,12 @@ public class WelcomeActivity extends AppCompatActivity {
             @Override
             public void onFailure(@NonNull Exception e) {
                 Log.i("mylog","fuckyoufather");
-                Toast.makeText(WelcomeActivity.this, "發生錯誤", Toast.LENGTH_LONG).show();//TODO 顯示錯誤給使用者知道
+                //Toast.makeText(WelcomeActivity.this, "", Toast.LENGTH_LONG).show();
+                //TODO 顯示錯誤給使用者知道
+                AlertDialog.Builder bdr=new AlertDialog.Builder(WelcomeActivity.this);
+                bdr.setMessage("發生錯誤!!");
+                bdr.setTitle("Bug");
+                bdr.setIcon(android.R.drawable.ic_dialog_alert);
             }
         });
 //        Query query = db.collection("users").whereEqualTo("userId", firebaseUser.getUid());

@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "995327022982-d2npeu0lbjodgs513b3c1o6f1k4nr440.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "tw.edu.niu.googlelogin",
+            "certificate_hash": "faab444bfc9791f4cc6d3585ca4609266b239f29"
+          }
+        },
+        {
           "client_id": "995327022982-f61f3t1hfrpbhrg8ocnmui1a8eqfb223.apps.googleusercontent.com",
           "client_type": 3
         },
