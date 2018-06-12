@@ -14,9 +14,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LoginActivity">
-
-        </activity>
+        <activity android:name=".LoginActivity"></activity>
 
         <service android:name=".MyMessengerRecieveService">
             <intent-filter>
@@ -55,10 +53,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TeamSelectActivity" >
-
-        </activity>
-        <activity android:name=".TeamCreateActivity"></activity>
+        <activity android:name=".TeamSelectActivity"></activity>
+        <activity android:name=".TeamCreateActivity" />
+        <activity android:name=".TrainCreateActivity"></activity>
     </application>
 
 </manifest>

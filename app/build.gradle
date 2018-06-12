@@ -62,5 +62,6 @@ dependencies {
     api 'com.google.firebase:firebase-firestore:16.0.0'
     api 'com.android.support:multidex:1.0.3'
     implementation 'com.android.support:design:27.1.1'
+
 }
 apply plugin: 'com.google.gms.google-services'

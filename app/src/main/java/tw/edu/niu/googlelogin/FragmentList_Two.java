@@ -17,23 +17,39 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.Executor;
+
+import tw.edu.niu.googlelogin.model.User;
 
 /**
  * Created by Solinari on 2016/12/31.
             */
 
     public class FragmentList_Two extends Fragment {
-    private  EditText username;
-    private EditText usernumber;
-    private EditText userdepartment;
-    private Button setup;
+    private  TextView tvname;
+    private TextView tvnumber;
+    private TextView tvgender;
+    private TextView tvdepartment;
+    private TextView tvcoperation;
+    private TextView tvteam;
+    private Button btnname,btnnumber,btngender,btndepartment,btncoperation,btnteam;
     private boolean error = false;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
+    private FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+
+
     @Override
     public Context getContext() {
         return super.getContext();
@@ -93,12 +109,63 @@ import java.util.Map;
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             View view = inflater.inflate(R.layout.activity_myself, container, false);
-//            setup = view.findViewById(R.id.button);
+            //TODO 個人資訊
+        User user = new User("","","","","","","","");
+        tvname = view.findViewById(R.id.tvname);
+        tvnumber = view.findViewById(R.id.tvnumber);
+        tvgender = view.findViewById(R.id.tvgender);
+        tvdepartment = view.findViewById(R.id.tvdepartment);
+        tvcoperation = view.findViewById(R.id.tvcoperation);
+        tvteam = view.findViewById(R.id.tvteam);
+        btnname = view.findViewById(R.id.btnname);
+        btnnumber = view.findViewById(R.id.btnnumber);
+        btngender = view.findViewById(R.id.btngender);
+        btncoperation = view.findViewById(R.id.btncoperation);
+        btnteam = view.findViewById(R.id.btnteam);
+        btndepartment = view.findViewById(R.id.btndepartment);
+        db.collection("users").document(firebaseUser.getUid()).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                Log.i("mylog","onSuccess");
+                if(documentSnapshot.exists()){
+                    Log.i("mylog","documentSnapshot.exists()");
+                    tvname.setText(documentSnapshot.get("name").toString());
+                    tvnumber.setText(documentSnapshot.get("number").toString());
+                    tvgender.setText(documentSnapshot.get("gender").toString());
+                    tvdepartment.setText(documentSnapshot.get("department").toString());
+                    tvcoperation.setText(documentSnapshot.get("coperation").toString());
+                    String teamId =documentSnapshot.get("teamID").toString();
+                    db.collection("teams").document(teamId).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                        @Override
+                        public void onSuccess(DocumentSnapshot documentSnapshot2) {
+                            if(documentSnapshot2.exists()){
+                                tvteam.setText(documentSnapshot2.get("name").toString());
+                            }
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+
+                        }
+                    });
+
+                }
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+
+            }
+        });
+
+
+//        btnname = view.findViewById(R.id.btnname);
+////            setup = view.findViewById(R.id.button);
 //            username =view.findViewById(R.id.name);
 //            usernumber =view.findViewById(R.id.number);
 //            userdepartment = view.findViewById(R.id.department);
 //        setup.setOnClickListener(new View.OnClickListener() {
-//            @Override
+//            @Override示
 //            public void onClick(View v) {
 //
 //                // Create a new user with a first and last name
