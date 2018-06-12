@@ -1,5 +1,7 @@
 package tw.edu.niu.googlelogin;
 
+import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -57,6 +59,10 @@ public class TeamSelectActivity extends AppCompatActivity {
                     Log.e("mylog", queryDocumentSnapshots.size()+"");
                     if(queryDocumentSnapshots == null || queryDocumentSnapshots.isEmpty()){
                         //TODO  找不到隊伍
+                        AlertDialog.Builder bdr=new AlertDialog.Builder(TeamSelectActivity.this);
+                        bdr.setMessage("如果您要創建隊伍，請按創建!");
+                        bdr.setTitle("目前無任何隊伍");
+                        bdr.setIcon(android.R.drawable.ic_dialog_info);
                     }else{
                         DocumentSnapshot documentSnapshot = null;
                         for(DocumentSnapshot snapshot : queryDocumentSnapshots){
@@ -121,10 +127,14 @@ public class TeamSelectActivity extends AppCompatActivity {
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
+
                     @Override
                     public void onFailure(@NonNull Exception e) {
                         Log.w("mytag", "Error updating document", e);
                         //TODO 無法更新使用者角色
+                        AlertDialog.Builder bd=new AlertDialog.Builder(TeamSelectActivity.this);
+                        bd.setTitle("角色更新失敗!");
+                        bd.setIcon(android.R.drawable.ic_dialog_alert);
                     }
                 });
 
