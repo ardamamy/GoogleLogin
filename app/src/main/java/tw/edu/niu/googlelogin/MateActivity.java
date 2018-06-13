@@ -8,9 +8,11 @@ import android.widget.Button;
 import android.widget.ListView;
 
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Queue;
 
 import tw.edu.niu.googlelogin.model.User;
 
@@ -20,6 +22,7 @@ public class MateActivity extends AppCompatActivity  {
    // List<String> marrayList;
     ArrayList<HashMap<String, User>> mArrayList = new ArrayList<HashMap<String, User>>();
     final FirebaseFirestore db = FirebaseFirestore.getInstance();
+    Query query=db.collection("users");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
