@@ -11,7 +11,9 @@ public class User implements Serializable {
     private String coperation;
     private String role;
     private String teamID;
-    public User(String i,String n,String s,String d,String g,String c,String r,String team){
+    private Boolean hasfee;
+    private Boolean success;
+    public User(String i,String n,String s,String d,String g,String c,String r,String team,Boolean hasfee,Boolean success){
         this.userId = i;
         this.name = n;
         this.number = s;
@@ -20,7 +22,13 @@ public class User implements Serializable {
         this.coperation = c;
         this.role = r;
         this.teamID = team;
+        this.hasfee = hasfee;
+        this.success = success;
     }
+
+    public Boolean getSuccess() { return success; }
+
+    public Boolean getHasfee() { return hasfee; }
 
     public String getTeamID() { return teamID; }
 
@@ -61,4 +69,8 @@ public class User implements Serializable {
     public void setRole(String role) { this.role = role; }
 
     public void setTeamID(String teamID) { this.teamID = teamID; }
+
+    public void setHasfee(Boolean hasfee) { this.hasfee = hasfee; }
+
+    public void setSuccess(boolean b) { this.success = success; }
 }

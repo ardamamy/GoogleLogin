@@ -14,7 +14,8 @@
         android:layout_alignBottom="@+id/tvteam"
         android:layout_alignParentStart="true"
         android:text="隊伍"
-        android:layout_alignParentLeft="true" />
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/ovalbutton"/>
 
     <Button
         android:id="@+id/btncoperation"
@@ -23,7 +24,9 @@
         android:layout_alignBottom="@+id/tvcoperation"
         android:layout_alignParentStart="true"
         android:text="職稱"
-        android:layout_alignParentLeft="true" />
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/ovalbutton"
+        />
 
     <TextView
         android:id="@+id/tvname"
@@ -32,7 +35,8 @@
         android:layout_above="@+id/btnnumber"
         android:layout_alignParentEnd="true"
         android:textSize="24sp"
-        android:layout_alignParentRight="true" />
+        android:layout_alignParentRight="true"
+        />
 
     <TextView
         android:id="@+id/tvnumber"
@@ -87,7 +91,8 @@
         android:layout_alignParentStart="true"
         android:layout_alignTop="@+id/tvname"
         android:text="姓名"
-        android:layout_alignParentLeft="true" />
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/ovalbutton"/>
 
     <Button
         android:id="@+id/btnnumber"
@@ -97,7 +102,8 @@
         android:layout_alignParentStart="true"
         android:layout_marginBottom="-141dp"
         android:text="學號"
-        android:layout_alignParentLeft="true" />
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/ovalbutton"/>
 
     <Button
         android:id="@+id/btngender"
@@ -106,7 +112,8 @@
         android:layout_alignParentStart="true"
         android:layout_alignTop="@+id/tvgender"
         android:text="性別"
-        android:layout_alignParentLeft="true" />
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/ovalbutton"/>
 
     <Button
         android:id="@+id/btndepartment"
@@ -115,6 +122,7 @@
         android:layout_alignBottom="@+id/tvdepartment"
         android:layout_alignParentStart="true"
         android:text="系別"
-        android:layout_alignParentLeft="true" />
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/ovalbutton"/>
 
 </RelativeLayout>
