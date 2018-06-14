@@ -39,7 +39,7 @@ public class MyselfActivity extends AppCompatActivity {
                 FirebaseFirestore db = FirebaseFirestore.getInstance();
                 // Create a new user with a first and last name
                 Map<String, Object> user = new HashMap<>();
-                final User ardam = new User("","","","","","","","");
+                final User ardam = new User("","","","","","","","",null,null);
                 try{
                     ardam.setName(username.getText().toString());
                     ardam.setNumber(usernumber.getText().toString());

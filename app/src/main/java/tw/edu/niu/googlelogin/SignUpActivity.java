@@ -73,7 +73,7 @@ public class SignUpActivity extends AppCompatActivity {
         eset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                user = new User("","","","","","","","");
+                user = new User("","","","","","","","",false,false);
 
                 try{
                     if(firebaseUser!=null){
@@ -83,7 +83,7 @@ public class SignUpActivity extends AppCompatActivity {
                         user.setGender(strgender);
                         user.setDepartment(edepartment.getText().toString());
                         user.setUserId(firebaseUser.getUid().toString());
-
+                        user.setSuccess(true);
                     }
 
                 }catch(Exception e){

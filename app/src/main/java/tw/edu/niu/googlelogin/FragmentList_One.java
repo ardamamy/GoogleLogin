@@ -135,8 +135,8 @@ public class FragmentList_One extends Fragment {
             public void onClick(View v) {
                 Toast.makeText(getActivity(),"DataEnter",Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(getActivity(),DataActivity.class);
-                getActivity().finish();
                 startActivity(intent);
+               getActivity().finish();
             }
         });
         mate_button.setOnClickListener(new View.OnClickListener() {
@@ -144,8 +144,8 @@ public class FragmentList_One extends Fragment {
             public void onClick(View v) {
                 Toast.makeText(getActivity(),"MateEnter",Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(getActivity(),MateActivity.class);
-                getActivity().finish();
                 startActivity(intent);
+                getActivity().finish();
             }
         });
         money_button.setOnClickListener(new View.OnClickListener() {
@@ -153,8 +153,8 @@ public class FragmentList_One extends Fragment {
             public void onClick(View v) {
                 Toast.makeText(getActivity(),"MoneyEnter",Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(getActivity(),MoneyActivity.class);
-                getActivity().finish();
                 startActivity(intent);
+                getActivity().finish();
             }
         });
 

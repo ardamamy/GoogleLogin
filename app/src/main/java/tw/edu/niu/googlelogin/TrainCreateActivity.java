@@ -16,7 +16,7 @@ public class TrainCreateActivity extends AppCompatActivity {
         backTofra3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(TrainCreateActivity.this,MainActivity.class);
+                Intent intent = new Intent(TrainCreateActivity.this,FragmentList_Three.class);
                 startActivity(intent);
                 finish();
             }

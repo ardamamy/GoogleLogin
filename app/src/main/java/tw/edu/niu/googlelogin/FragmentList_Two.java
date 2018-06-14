@@ -110,7 +110,7 @@ import tw.edu.niu.googlelogin.model.User;
                                  Bundle savedInstanceState) {
             View view = inflater.inflate(R.layout.activity_myself, container, false);
             //TODO 個人資訊
-        User user = new User("","","","","","","","");
+
         tvname = view.findViewById(R.id.tvname);
         tvnumber = view.findViewById(R.id.tvnumber);
         tvgender = view.findViewById(R.id.tvgender);
@@ -157,7 +157,12 @@ import tw.edu.niu.googlelogin.model.User;
 
             }
         });
+        btnname.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+            }
+        });
 
 //        btnname = view.findViewById(R.id.btnname);
 ////            setup = view.findViewById(R.id.button);

@@ -11,8 +11,7 @@ public class User implements Serializable {
     private String coperation;
     private String role;
     private String teamID;
-    private String teamexpenditure;
-    public User(String i,String n,String s,String d,String g,String c,String r,String team,String fee){
+    public User(String i,String n,String s,String d,String g,String c,String r,String team){
         this.userId = i;
         this.name = n;
         this.number = s;
@@ -21,7 +20,6 @@ public class User implements Serializable {
         this.coperation = c;
         this.role = r;
         this.teamID = team;
-        this.teamexpenditure = fee;
     }
 
     public String getTeamID() { return teamID; }
@@ -63,8 +61,4 @@ public class User implements Serializable {
     public void setRole(String role) { this.role = role; }
 
     public void setTeamID(String teamID) { this.teamID = teamID; }
-
-    public void setTeamexpenditure(String teamexpenditure) {
-        this.teamexpenditure = teamexpenditure;
-    }
 }
