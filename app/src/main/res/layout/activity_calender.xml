@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="tw.edu.niu.googlelogin.CalenderActivity">
+    tools:context="tw.edu.niu.googlelogin.CalenderActivity"
+    android:background="@drawable/gradient_3">
 
     <CalendarView
         android:id="@+id/calendarView"
