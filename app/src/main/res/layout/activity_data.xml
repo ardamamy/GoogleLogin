@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="tw.edu.niu.googlelogin.DataActivity">
+    tools:context="tw.edu.niu.googlelogin.DataActivity"
+    android:background="@drawable/background_radius">
 
 </android.support.constraint.ConstraintLayout>
