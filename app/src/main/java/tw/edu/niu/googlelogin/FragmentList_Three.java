@@ -3,6 +3,7 @@ package tw.edu.niu.googlelogin;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,6 +33,7 @@ public class FragmentList_Three extends Fragment {
         btnenter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Log.d("mylog","btnenter");
                 Intent intent = new Intent(getActivity(),TrainCreateActivity.class);
                 startActivity(intent);
                 getActivity().finish();

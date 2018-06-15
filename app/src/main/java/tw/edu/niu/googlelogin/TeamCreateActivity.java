@@ -33,9 +33,15 @@ public class TeamCreateActivity extends AppCompatActivity {
     FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
     @Override
+    protected void onStart() {
+        super.onStart();
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_team_create);
+        Log.d("mylog","success enter");
         buttonCreate = findViewById(R.id.buttonCreate);
         teamName = findViewById(R.id.teamName);
         buttonCreate.setOnClickListener(new View.OnClickListener() {

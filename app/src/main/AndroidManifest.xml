@@ -52,13 +52,10 @@
         <activity android:name=".MoneyActivity" />
         <activity android:name=".MyselfActivity" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".LoginActivity">
-
-        </activity>
-        <activity android:name=".TeamSelectActivity" >
-
-        </activity>
+        <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".TeamSelectActivity" ></activity>
         <activity android:name=".TeamCreateActivity"></activity>
+        <activity android:name=".TrainCreateActivity"></activity>
     </application>
 
 </manifest>
