@@ -109,7 +109,7 @@ import tw.edu.niu.googlelogin.model.User;
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             View view = inflater.inflate(R.layout.activity_myself, container, false);
-            //TODO 個人資訊
+            // 個人資訊
 
         tvname = view.findViewById(R.id.tvname);
         tvnumber = view.findViewById(R.id.tvnumber);

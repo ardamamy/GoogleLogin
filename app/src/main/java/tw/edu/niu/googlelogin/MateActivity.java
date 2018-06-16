@@ -96,7 +96,10 @@ public class MateActivity extends AppCompatActivity  {
                                             }).addOnFailureListener(new OnFailureListener() {
                                                 @Override
                                                 public void onFailure(@NonNull Exception e) {
-                                                    //TODO 錯誤:職稱查詢失敗
+                                                    // 錯誤:職稱查詢失敗
+                                                    AlertDialog.Builder bd=new AlertDialog.Builder(MateActivity.this);
+                                                    bd.setTitle("職稱查詢失敗!");
+                                                    bd.setIcon(android.R.drawable.ic_dialog_alert);
                                                 }
                                             });
                                             if(checkCoperation.equals("球經")){
@@ -104,11 +107,18 @@ public class MateActivity extends AppCompatActivity  {
                                                 Toast.makeText(MateActivity.this,"點選第 "+(position +1) +" 個 \n內容："+mArrayList.get(position), Toast.LENGTH_SHORT).show();
                                                 mateSelectID = mArrayListuserID.get(position);
                                                 db.collection("users").document(mateSelectID).update("hasfee",true);
-                                                //TODO 提醒使用者更新成功
+                                                // 提醒使用者更新成功
                                                 Toast.makeText(MateActivity.this,"隊費設定已繳", Toast.LENGTH_SHORT).show();
                                                 lvmember.setAdapter(adapter);
+                                                AlertDialog.Builder bd=new AlertDialog.Builder(MateActivity.this);
+                                                bd.setTitle("繳費設定已更新成功!");
+                                                bd.setIcon(android.R.drawable.stat_notify_sync);
                                             }else{
-                                                //TODO 職稱不同無法操作
+                                                //職稱不同無法操作
+                                                AlertDialog.Builder bd=new AlertDialog.Builder(MateActivity.this);
+                                                bd.setTitle("無法操作!");
+                                                bd.setMessage("需為該權限使用者，方可更改繳費狀況。");
+                                                bd.setIcon(android.R.drawable.ic_dialog_alert);
                                             }
                                         }
                                     });
@@ -122,7 +132,10 @@ public class MateActivity extends AppCompatActivity  {
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                //TODO 隊伍比對失敗
+                //隊伍比對失敗
+                AlertDialog.Builder bd=new AlertDialog.Builder(MateActivity.this);
+                bd.setTitle("您不是該隊伍!");
+                bd.setIcon(android.R.drawable.ic_dialog_alert);
             }
         });
         btnback.setOnClickListener(new View.OnClickListener() {
