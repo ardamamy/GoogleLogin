@@ -15,15 +15,17 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="250dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name" />
+        android:hint="@string/str2"
+        android:inputType="textPersonName" />
 
     <Button
         android:id="@+id/buttonCreate"
-        android:layout_width="wrap_content"
+        android:layout_width="67dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="147dp"
+        android:layout_marginBottom="175dp"
+        android:background="@drawable/gradient_2"
         android:text="創建" />
+
 </RelativeLayout>

@@ -48,7 +48,7 @@ public class TeamCreateActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(teamName.getText().toString().equals("")){
-                    //TODO 使用者沒有輸入東西
+                    // 使用者沒有輸入東西
                     AlertDialog.Builder bd=new AlertDialog.Builder(TeamCreateActivity.this);
                     bd.setTitle("請重新輸入!");
                     bd.setIcon(android.R.drawable.ic_dialog_alert);
@@ -63,7 +63,7 @@ public class TeamCreateActivity extends AppCompatActivity {
                         }).addOnFailureListener(new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception e) {
-                                //TODO 無法創建系隊
+                                // 無法創建系隊
                                 AlertDialog.Builder bd=new AlertDialog.Builder(TeamCreateActivity.this);
                                 bd.setTitle("創建隊伍失敗!");
                                 bd.setIcon(android.R.drawable.ic_dialog_alert);
@@ -97,7 +97,7 @@ public class TeamCreateActivity extends AppCompatActivity {
                     @Override
                     public void onFailure(@NonNull Exception e) {
                         Log.w("mytag", "Error updating document", e);
-                        //TODO 無法更新使用者角色
+                        // 無法更新使用者角色
                         AlertDialog.Builder bd=new AlertDialog.Builder(TeamCreateActivity.this);
                         bd.setTitle("角色更新失敗!");
                         bd.setIcon(android.R.drawable.ic_dialog_alert);

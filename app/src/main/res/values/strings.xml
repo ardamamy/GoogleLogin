@@ -12,6 +12,8 @@
         <item>女</item>
     </string-array>
     <string name="spn_cop_list_prompt">請選擇職稱</string>
+    <string name="str1">個人資訊</string>
+    <string name="str2">隊伍名稱</string>
     <string-array name="cop_list">
         <item>(輸入職稱)</item>
         <item>隊長</item>

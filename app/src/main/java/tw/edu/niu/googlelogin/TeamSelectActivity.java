@@ -58,7 +58,7 @@ public class TeamSelectActivity extends AppCompatActivity {
                 }else{
                     Log.e("mylog", queryDocumentSnapshots.size()+"");
                     if(queryDocumentSnapshots == null || queryDocumentSnapshots.isEmpty()){
-                        //TODO  找不到隊伍
+                        //  找不到隊伍
                         AlertDialog.Builder bdr=new AlertDialog.Builder(TeamSelectActivity.this);
                         bdr.setMessage("如果您要創建隊伍，請按創建!");
                         bdr.setTitle("目前無任何隊伍");
@@ -131,7 +131,7 @@ public class TeamSelectActivity extends AppCompatActivity {
                     @Override
                     public void onFailure(@NonNull Exception e) {
                         Log.w("mytag", "Error updating document", e);
-                        //TODO 無法更新使用者角色
+                        // 無法更新使用者角色
                         AlertDialog.Builder bd=new AlertDialog.Builder(TeamSelectActivity.this);
                         bd.setTitle("角色更新失敗!");
                         bd.setIcon(android.R.drawable.ic_dialog_alert);

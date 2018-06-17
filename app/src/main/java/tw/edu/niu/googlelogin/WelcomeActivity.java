@@ -9,6 +9,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.firebase.client.Firebase;
@@ -28,6 +30,8 @@ import javax.annotation.Nullable;
 public class WelcomeActivity extends AppCompatActivity {
     ImageView imageView;
     AnimationDrawable animationDrawable;
+    ProgressBar bar;
+    TextView textView;
     private FirebaseAuth mAuth;
     private int delay = 3200;
     FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
@@ -60,9 +64,31 @@ public class WelcomeActivity extends AppCompatActivity {
         imageView.setBackgroundResource(R.drawable.img);
         animationDrawable = (AnimationDrawable) imageView.getBackground();
         animationDrawable.start();
-
+        bar =findViewById(R.id.progressBar);
+        textView=findViewById(R.id.tvProgress);
+        new Thread(){
+            @Override
+            public void run() {
+                int i=0;
+                while(i<100){
+                    i++;
+                    try {
+                        Thread.sleep(80);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    final int j=i;
+                    bar.setProgress(i);
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            textView.setText(j+"%");
+                        }
+                    });
+                }
+            }
+        }.start();
     }
-
     private void checkRegister(){
         //Intent mIntent2 = getIntent();
         //stringUID = mIntent2.getStringExtra("StringUID");
@@ -73,14 +99,14 @@ public class WelcomeActivity extends AppCompatActivity {
                 if(documentSnapshot.exists()){
                     Log.i("mylog","fuckyoubeach");
                     if(documentSnapshot.get("teamID") != null && !documentSnapshot.get("teamID").toString().equals("")){
-                        //TODO 使用者已經有所屬球隊
+                        // 使用者已經有所屬球隊
                         Toast.makeText(WelcomeActivity.this, "您已有所屬球隊", Toast.LENGTH_LONG).show();
                         Log.i("mylog","使用者已經有所屬球隊");
                         Intent intent = new Intent(WelcomeActivity.this,MainActivity.class);
                         startActivity(intent);
                         finish();
                     }else {
-                        // TODO 使用者沒有所屬球隊
+                        //  使用者沒有所屬球隊
                         Toast.makeText(WelcomeActivity.this,"您還未加入任何球隊",Toast.LENGTH_LONG).show();
                         Log.i("mylog","使用者沒有所屬球隊");
                         Intent intent = new Intent(WelcomeActivity.this, TeamSelectActivity.class);
@@ -99,7 +125,7 @@ public class WelcomeActivity extends AppCompatActivity {
             public void onFailure(@NonNull Exception e) {
                 Log.i("mylog","fuckyoufather");
                 //Toast.makeText(WelcomeActivity.this, "", Toast.LENGTH_LONG).show();
-                //TODO 顯示錯誤給使用者知道
+                // 顯示錯誤給使用者知道
                 AlertDialog.Builder bdr=new AlertDialog.Builder(WelcomeActivity.this);
                 bdr.setMessage("發生錯誤!!");
                 bdr.setTitle("Bug");
@@ -148,4 +174,7 @@ public class WelcomeActivity extends AppCompatActivity {
 //            }
 //        });
     }
+
 }
+
+
