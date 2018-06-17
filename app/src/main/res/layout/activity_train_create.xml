@@ -23,6 +23,28 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
+        android:text="返回"
         android:background="@drawable/gradient_2"
-        android:text="返回" />
+        android:layout_alignParentLeft="true" />
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:title="菜單" />
+
+    <ListView
+        android:id="@+id/lvtrainmenu"
+        android:layout_width="match_parent"
+        android:layout_height="464dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/toolbar3"
+        android:layout_alignParentLeft="true" />
+
 </RelativeLayout>
