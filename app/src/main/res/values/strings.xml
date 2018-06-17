@@ -21,5 +21,6 @@
         <item>器材長</item>
         <item>一般成員</item>
     </string-array>
+    <string name="title_activity_test">TestActivity</string>
 
 </resources>

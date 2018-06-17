@@ -8,7 +8,7 @@ public class TrainMenu {
     private String trainTitle;
     private String trainCreatedUserID;
     private String teamID;
-    TrainMenu(ArrayList<String> mtrainItem,String trainTime,String trainTitle,String trainCreatedUserID,String teamID){
+    public TrainMenu(ArrayList<String> mtrainItem, String trainTime, String trainTitle, String trainCreatedUserID, String teamID){
         for(int i=0;i < mtrainItem.size();i++){
             this.trainItem.add(mtrainItem.get(i)) ;
         }
