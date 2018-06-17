@@ -14,8 +14,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
-        android:text="登出"
-        android:layout_alignParentRight="true" />
+        android:background="@drawable/btn_signout"
+        android:text="登出" />
 
     <ImageButton
         android:id="@+id/mate_button"

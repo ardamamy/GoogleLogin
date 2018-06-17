@@ -35,6 +35,8 @@
         android:adjustViewBounds="false"
         android:cropToPadding="false"
         android:scaleType="centerCrop"
-        app:srcCompat="@drawable/badminton" />
+        app:srcCompat="@drawable/badminton"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="24dp" />
 
 </RelativeLayout>
