@@ -9,6 +9,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.firebase.client.Firebase;
@@ -28,6 +30,8 @@ import javax.annotation.Nullable;
 public class WelcomeActivity extends AppCompatActivity {
     ImageView imageView;
     AnimationDrawable animationDrawable;
+    ProgressBar bar;
+    TextView textView;
     private FirebaseAuth mAuth;
     private int delay = 3200;
     FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
@@ -60,9 +64,31 @@ public class WelcomeActivity extends AppCompatActivity {
         imageView.setBackgroundResource(R.drawable.img);
         animationDrawable = (AnimationDrawable) imageView.getBackground();
         animationDrawable.start();
-
+        bar =findViewById(R.id.progressBar);
+        textView=findViewById(R.id.tvProgress);
+        new Thread(){
+            @Override
+            public void run() {
+                int i=0;
+                while(i<100){
+                    i++;
+                    try {
+                        Thread.sleep(80);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    final int j=i;
+                    bar.setProgress(i);
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            textView.setText(j+"%");
+                        }
+                    });
+                }
+            }
+        }.start();
     }
-
     private void checkRegister(){
         //Intent mIntent2 = getIntent();
         //stringUID = mIntent2.getStringExtra("StringUID");
@@ -148,4 +174,7 @@ public class WelcomeActivity extends AppCompatActivity {
 //            }
 //        });
     }
+
 }
+
+
