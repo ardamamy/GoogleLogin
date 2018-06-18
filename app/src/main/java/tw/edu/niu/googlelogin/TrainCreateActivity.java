@@ -67,7 +67,11 @@ public class TrainCreateActivity extends AppCompatActivity {
                 break;
             case R.id.action_help:
                 Toast.makeText(this,"action_help",Toast.LENGTH_SHORT).show();
-                // TODO 跳出提示
+                // TODO 跳出提示.
+                AlertDialog.Builder bdr=new AlertDialog.Builder(TrainCreateActivity.this);
+                bdr.setMessage("點擊一次菜單列表，可檢視該訓練菜單內容。\n點擊設定可新增菜單內容與最新菜單列表。");
+                bdr.setTitle("提示:");
+                bdr.setIcon(android.R.drawable.ic_dialog_info);
                 break;
         }
         return super.onOptionsItemSelected(item);
@@ -142,6 +146,9 @@ public class TrainCreateActivity extends AppCompatActivity {
             @Override
             public void onFailure(@NonNull Exception e) {
                 //TODO 搜尋失敗
+                AlertDialog.Builder bd=new AlertDialog.Builder(TrainCreateActivity.this);
+                bd.setTitle("搜尋錯誤!");
+                bd.setIcon(android.R.drawable.ic_dialog_alert);
             }
         });
 
