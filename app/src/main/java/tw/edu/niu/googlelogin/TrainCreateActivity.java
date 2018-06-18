@@ -65,6 +65,10 @@ public class TrainCreateActivity extends AppCompatActivity {
             case R.id.subitem2:
                 Toast.makeText(this,"subitem2",Toast.LENGTH_SHORT).show();
                 break;
+            case R.id.action_help:
+                Toast.makeText(this,"action_help",Toast.LENGTH_SHORT).show();
+                // TODO 跳出提示
+                break;
         }
         return super.onOptionsItemSelected(item);
     }
