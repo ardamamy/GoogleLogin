@@ -8,7 +8,8 @@ public class TrainMenu {
     private String trainTitle;
     private String trainCreatedUserID;
     private String teamID;
-    public TrainMenu(ArrayList<String> mtrainItem, String trainTime, String trainTitle, String trainCreatedUserID, String teamID){
+    private Boolean isnew;
+    public TrainMenu(ArrayList<String> mtrainItem, String trainTime, String trainTitle, String trainCreatedUserID, String teamID,Boolean isnew){
         for(int i=0;i < mtrainItem.size();i++){
             this.trainItem.add(mtrainItem.get(i)) ;
         }
@@ -16,7 +17,10 @@ public class TrainMenu {
         this.trainTitle = trainTitle;
         this.trainCreatedUserID = trainCreatedUserID;
         this.teamID = teamID;
+        this.isnew = isnew;
     }
+
+    public Boolean getIsnew() { return isnew; }
 
     public String getTeamID() { return teamID; }
 
@@ -37,4 +41,6 @@ public class TrainMenu {
     public void setTrainTitle(String trainTitle) { this.trainTitle = trainTitle; }
 
     public void setTeamID(String teamID) { this.teamID = teamID; }
+
+    public void setIsnew(boolean b) { this.isnew = isnew; }
 }

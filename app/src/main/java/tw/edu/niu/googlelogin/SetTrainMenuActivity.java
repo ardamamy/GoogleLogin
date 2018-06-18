@@ -117,11 +117,12 @@ public class SetTrainMenuActivity extends AppCompatActivity {
             public void onSuccess(DocumentSnapshot documentSnapshot) {
                 if(documentSnapshot.exists()){
                     userteamid = documentSnapshot.get("teamID").toString();
-                    TrainMenu trainMenu = new TrainMenu(trainItemList,"","","","");
+                    TrainMenu trainMenu = new TrainMenu(trainItemList,"","","","",null);
                     trainMenu.setTrainTime(edtime.getText().toString());
                     trainMenu.setTrainTitle(edtitle.getText().toString());
                     trainMenu.setTrainCreatedUserID(firebaseUser.getUid());
                     trainMenu.setTeamID(userteamid);
+                    trainMenu.setIsnew(false);
                     db.collection("train").add(trainMenu).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                         @Override
                         public void onSuccess(DocumentReference documentReference) {

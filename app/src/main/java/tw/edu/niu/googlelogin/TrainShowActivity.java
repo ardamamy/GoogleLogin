@@ -46,7 +46,7 @@ public class TrainShowActivity extends AppCompatActivity {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
                 if(documentSnapshot.exists()){
-                   TrainMenu trainMenu = new TrainMenu((ArrayList<String>) documentSnapshot.get("trainItem"),"","","","");
+                   TrainMenu trainMenu = new TrainMenu((ArrayList<String>) documentSnapshot.get("trainItem"),"","","","",null);
                    trainMenu.setTrainTitle(documentSnapshot.get("trainTitle").toString());
                    trainMenu.setTrainItem((ArrayList<String>) documentSnapshot.get("trainItem"));
                    trainMenu.setTrainCreatedUserID((String) documentSnapshot.get("trainCreatedUserID"));

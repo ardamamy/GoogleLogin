@@ -34,6 +34,8 @@ import java.util.Map;
 
 import javax.annotation.Nullable;
 
+import static android.widget.Toast.LENGTH_SHORT;
+
 public class TrainCreateActivity extends AppCompatActivity {
     Button backTofra3;
     android.support.v7.widget.Toolbar mtoolbar;
@@ -54,19 +56,37 @@ public class TrainCreateActivity extends AppCompatActivity {
         int id = item.getItemId();
         switch (id){
             case R.id.action_settings:
-                Toast.makeText(this,"action_settings",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this,"action_settings", LENGTH_SHORT).show();
                 break;
             case R.id.subitem1:
-                Toast.makeText(this,"subitem1",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this,"subitem1", LENGTH_SHORT).show();
                 Intent intent = new Intent(TrainCreateActivity.this,SetTrainMenuActivity.class);
                 startActivity(intent);
                 finish();
                 break;
             case R.id.subitem2:
-                Toast.makeText(this,"subitem2",Toast.LENGTH_SHORT).show();
+                db.collection("users").document(firebaseUser.getUid()).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    @Override
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+                        if(documentSnapshot.exists()){
+                            String role = documentSnapshot.get("role").toString();
+                            if(role == "admin"){
+                                //TODO 設定成員權限
+                            }else{
+                                Toast.makeText(TrainCreateActivity.this,"你沒有管理權限",LENGTH_SHORT).show();
+                            }
+                        }
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+
+                    }
+                });
+
                 break;
             case R.id.action_help:
-                Toast.makeText(this,"action_help",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this,"action_help", LENGTH_SHORT).show();
                 // TODO 跳出提示
                 break;
         }

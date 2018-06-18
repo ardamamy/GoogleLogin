@@ -17,10 +17,20 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.iid.FirebaseInstanceId;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.annotation.Nullable;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,10 +38,14 @@ public class MainActivity extends AppCompatActivity {
     private TabLayout tabLayout;
     private int[] IconResID = {R.drawable.selector_one,R.drawable.selector_two,R.drawable.selector_three};
     private String[] Title = {"首頁","個人資訊","訓練菜單"};
+    FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+    private final FirebaseFirestore db = FirebaseFirestore.getInstance();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         String refreshedToken = FirebaseInstanceId.getInstance().getToken();
         Log.d("mytag", "Refreshed token: " + refreshedToken);
         myViewPager = (ViewPager) findViewById(R.id.myViewPager);
@@ -61,11 +75,16 @@ public class MainActivity extends AppCompatActivity {
         FragmentList_Two myFragment2 = new FragmentList_Two();
         FragmentList_Three myFragment3 = new FragmentList_Three();
         List<Fragment> fragmentList = new ArrayList<Fragment>();
+
+
+
         fragmentList.add(myFragment1);
         fragmentList.add(myFragment2);
         fragmentList.add(myFragment3);
+
         ViewPagerFragmentAdapter myFragmentAdapter = new ViewPagerFragmentAdapter(getSupportFragmentManager(), fragmentList);
         myViewPager.setAdapter(myFragmentAdapter);
     }
+
 
 }
