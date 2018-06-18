@@ -21,7 +21,8 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="84dp"
-        android:progressDrawable="@drawable/custom_progress_bar_style" />
+        android:progressDrawable="@drawable/custom_progress_bar_style"
+        android:layout_alignParentLeft="true" />
 
     <TextView
         android:id="@+id/tvProgress"

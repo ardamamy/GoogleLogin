@@ -9,10 +9,10 @@
             <item android:id="@+id/subitem1"
                 android:title="新增菜單"></item>
             <item android:id="@+id/subitem2"
-                android:title="刪除菜單"></item>
+                android:title="設定最新菜單"></item>
             <item android:id="@+id/subitem3"
-                android:title="修改菜單"></item>
-"
+                android:title="權限設定"></item>
+
 
         </menu>
 

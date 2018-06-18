@@ -2,6 +2,7 @@ package tw.edu.niu.googlelogin;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -12,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.Auth;
@@ -98,6 +100,7 @@ public class FragmentList_One extends Fragment {
         data_button = (ImageButton) view.findViewById(R.id.data_button);
         mate_button = (ImageButton)view.findViewById(R.id.mate_button);
         money_button = (ImageButton)view.findViewById(R.id.money_button);
+
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
                 .build();

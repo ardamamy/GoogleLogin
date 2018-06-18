@@ -1,21 +1,48 @@
 package tw.edu.niu.googlelogin;
 
+import android.app.AlertDialog;
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.SimpleAdapter;
 import android.widget.Toast;
 import android.widget.Toolbar;
+
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QuerySnapshot;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.annotation.Nullable;
 
 public class TrainCreateActivity extends AppCompatActivity {
     Button backTofra3;
     android.support.v7.widget.Toolbar mtoolbar;
     ListView lvtrainmenu;
+    ArrayList<HashMap<String,String>> menulist;
+    ArrayList<String> menulistID;
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
+    FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+    String userTeamID = "";
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
@@ -50,6 +77,69 @@ public class TrainCreateActivity extends AppCompatActivity {
         backTofra3 = findViewById(R.id.button2);
         mtoolbar = findViewById(R.id.toolbar3);
         setSupportActionBar(mtoolbar);
+        menulist = new ArrayList<HashMap<String,String>>();
+        menulistID = new ArrayList<String>();
+        lvtrainmenu = findViewById(R.id.lvtrainmenu);
+        menulist.clear();
+        menulistID.clear();
+        db.collection("users").document(firebaseUser.getUid()).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                if(documentSnapshot.exists()){
+                    userTeamID = documentSnapshot.get("teamID").toString();
+                    Query query = db.collection("train").whereEqualTo("teamID",userTeamID);
+                    query.addSnapshotListener(TrainCreateActivity.this, new EventListener<QuerySnapshot>() {
+                        @Override
+                        public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException e) {
+                            if (e != null) {
+                                Log.e("mylog", "Error", e);
+                            } else {
+                                Log.e("mylog", queryDocumentSnapshots.size() + "");
+                                if (queryDocumentSnapshots == null || queryDocumentSnapshots.isEmpty()) {
+                                    AlertDialog.Builder bdr = new AlertDialog.Builder(TrainCreateActivity.this);
+                                    bdr.setMessage("無");
+                                    bdr.setTitle("目前無任何菜單");
+                                    bdr.setIcon(android.R.drawable.ic_dialog_info);
+                                } else {
+                                    Log.e("mylog", "ENTER DocumentSnapshot");
+                                    DocumentSnapshot documentSnapshot = null;
+                                    for (DocumentSnapshot snapshot : queryDocumentSnapshots) {
+                                        documentSnapshot = snapshot;
+                                        HashMap map1 = new HashMap<String,String>();
+                                        map1.put("trainTitle",snapshot.get("trainTitle").toString());
+                                        map1.put("trainTime",snapshot.get("trainTime").toString());
+                                        menulist.add(map1);
+                                        menulistID.add(snapshot.getId().toString());
+                                        Log.e("mylog", snapshot.get("trainTitle").toString());
+                                    }
+                                    updatelistview(menulist,lvtrainmenu);
+                                    lvtrainmenu.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                                        @Override
+                                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                                            String text = menulistID.get(position).toString();
+                                            String result = "索引值: " + position + "\n" + "內容: " + text;
+                                            Toast.makeText(TrainCreateActivity.this, result, Toast.LENGTH_LONG).show();
+                                            Intent intent = new Intent();
+                                            intent.setClass(TrainCreateActivity.this,TrainShowActivity.class);
+                                            Bundle bundle = new Bundle();
+                                            bundle.putString("menulistID",text);
+                                            intent.putExtras(bundle);   // 記得put進去，不然資料不會帶過去哦
+                                            startActivity(intent);
+                                            finish();
+                                        }
+                                    });
+                                }
+                            }
+                        }
+                    });
+                }
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                //TODO 搜尋失敗
+            }
+        });
 
         backTofra3.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,5 +149,13 @@ public class TrainCreateActivity extends AppCompatActivity {
                 finish();
             }
         });
+    }
+    private void updatelistview(ArrayList<HashMap<String,String>> menulist,ListView lvtrainmenu){
+
+
+        SimpleAdapter simpleAdapter = new SimpleAdapter(TrainCreateActivity.this,menulist,
+                android.R.layout.simple_list_item_2,new String[] {"trainTitle","trainTime"},new int[] { android.R.id.text1, android.R.id.text2 }
+        );
+        lvtrainmenu.setAdapter(simpleAdapter);
     }
 }

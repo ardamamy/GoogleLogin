@@ -56,7 +56,8 @@
         <activity android:name=".TeamSelectActivity" />
         <activity android:name=".TeamCreateActivity" />
         <activity android:name=".TrainCreateActivity" />
-        <activity android:name=".SetTrainMenuActivity"></activity>
+        <activity android:name=".SetTrainMenuActivity" />
+        <activity android:name=".TrainShowActivity"></activity>
     </application>
 
 </manifest>

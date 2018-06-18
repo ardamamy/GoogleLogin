@@ -3,12 +3,15 @@ package tw.edu.niu.googlelogin;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,22 +34,28 @@ public class TeamCreateActivity extends AppCompatActivity {
     TextView teamName;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-
     @Override
     protected void onStart() {
         super.onStart();
+
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_team_create);
+
+
         Log.d("mylog","success enter");
         buttonCreate = findViewById(R.id.buttonCreate);
         teamName = findViewById(R.id.teamName);
+
+       //animationDrawable.start();
+
         buttonCreate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 if(teamName.getText().toString().equals("")){
                     // 使用者沒有輸入東西
                     AlertDialog.Builder bd=new AlertDialog.Builder(TeamCreateActivity.this);

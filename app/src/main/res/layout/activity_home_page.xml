@@ -15,7 +15,8 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
         android:background="@drawable/btn_signout"
-        android:text="登出" />
+        android:text="登出"
+        android:layout_alignParentRight="true" />
 
     <ImageButton
         android:id="@+id/mate_button"

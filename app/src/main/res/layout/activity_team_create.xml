@@ -28,4 +28,13 @@
         android:background="@drawable/gradient_2"
         android:text="創建" />
 
+    <ImageView
+        android:id="@+id/angview"
+        android:layout_width="192dp"
+        android:layout_height="147dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp"
+        app:srcCompat="@android:color/transparent" />
+
 </RelativeLayout>
