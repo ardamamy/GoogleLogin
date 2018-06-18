@@ -5,4 +5,5 @@
     <item android:drawable="@drawable/ang1" android:duration="500"></item>
     <item android:drawable="@drawable/ang2" android:duration="500"></item>
     <item android:drawable="@drawable/ang3" android:duration="500"></item>
+    <item android:drawable="@drawable/ang2" android:duration="500"></item>
 </animation-list>
