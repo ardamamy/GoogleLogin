@@ -12,13 +12,13 @@
         android:id="@+id/btnteam"
         android:layout_width="75dp"
         android:layout_height="30dp"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="246dp"
+        android:layout_below="@+id/btncoperation"
         android:background="@drawable/ovalbutton"
         android:text="隊伍"
         android:textColor="#121361"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_alignParentLeft="true" />
 
     <Button
         android:id="@+id/btncoperation"
@@ -29,7 +29,8 @@
         android:background="@drawable/ovalbutton"
         android:text="職稱"
         android:textColor="#121361"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_alignParentLeft="true" />
 
     <TextView
         android:id="@+id/tvname"
@@ -37,7 +38,8 @@
         android:layout_height="30dp"
         android:layout_alignParentEnd="true"
         android:layout_alignTop="@+id/btnname"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        android:layout_alignParentRight="true" />
 
     <TextView
         android:id="@+id/tvnumber"
@@ -46,7 +48,8 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="142dp"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        android:layout_alignParentRight="true" />
 
     <TextView
         android:id="@+id/tvgender"
@@ -55,7 +58,8 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="185dp"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        android:layout_alignParentRight="true" />
 
     <TextView
         android:id="@+id/tvdepartment"
@@ -63,7 +67,8 @@
         android:layout_height="30dp"
         android:layout_alignParentEnd="true"
         android:layout_alignTop="@+id/btndepartment"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        android:layout_alignParentRight="true" />
 
     <TextView
         android:id="@+id/tvcoperation"
@@ -71,7 +76,8 @@
         android:layout_height="30dp"
         android:layout_alignParentEnd="true"
         android:layout_alignTop="@+id/btncoperation"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        android:layout_alignParentRight="true" />
 
     <TextView
         android:id="@+id/tvteam"
@@ -79,7 +85,8 @@
         android:layout_height="30dp"
         android:layout_alignParentEnd="true"
         android:layout_alignTop="@+id/btnteam"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        android:layout_alignParentRight="true" />
 
     <Button
         android:id="@+id/btnname"
@@ -92,7 +99,8 @@
         android:text="姓名"
         android:textColor="#121361"
         android:textSize="14sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_alignParentLeft="true" />
 
     <Button
         android:id="@+id/btnnumber"
@@ -103,7 +111,8 @@
         android:background="@drawable/ovalbutton"
         android:text="學號"
         android:textColor="#121361"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_alignParentLeft="true" />
 
     <Button
         android:id="@+id/btngender"
@@ -114,7 +123,8 @@
         android:background="@drawable/ovalbutton"
         android:text="性別"
         android:textColor="#121361"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_alignParentLeft="true" />
 
     <Button
         android:id="@+id/btndepartment"
@@ -126,7 +136,8 @@
         android:background="@drawable/ovalbutton"
         android:text="系別"
         android:textColor="#121361"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_alignParentLeft="true" />
 
     <Button
         android:id="@+id/button3"

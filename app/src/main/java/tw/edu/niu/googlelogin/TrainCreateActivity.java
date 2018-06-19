@@ -71,7 +71,7 @@ public class TrainCreateActivity extends AppCompatActivity {
                         if(documentSnapshot.exists()){
                             String role = documentSnapshot.get("role").toString();
                             if(role == "admin"){
-                                //TODO 設定成員權限
+                                Toast.makeText(TrainCreateActivity.this,"進入設定最新菜單",LENGTH_SHORT).show();//TODO 設定成員權限
                             }else{
                                 Toast.makeText(TrainCreateActivity.this,"你沒有管理權限",LENGTH_SHORT).show();
                             }
@@ -92,7 +92,7 @@ public class TrainCreateActivity extends AppCompatActivity {
                 bdr.setMessage("點擊一次菜單列表，可檢視該訓練菜單內容。\n點擊設定可新增菜單內容與最新菜單列表。");
                 bdr.setTitle("提示:");
                 bdr.setIcon(android.R.drawable.ic_dialog_info);
-                Toast.makeText(this,"action_help", LENGTH_SHORT).show();
+
 
                 break;
         }
