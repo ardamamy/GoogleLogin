@@ -20,51 +20,51 @@
 
     <ImageButton
         android:id="@+id/mate_button"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_alignParentEnd="true"
-        android:layout_centerVertical="true"
-        android:layout_marginEnd="103dp"
+        android:layout_width="121dp"
+        android:layout_height="140dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/calender_button"
+        android:layout_marginBottom="112dp"
         android:background="@drawable/ovalbutton"
         android:scaleType="fitCenter"
         app:srcCompat="@drawable/andriod"
-        android:layout_marginRight="103dp"
-        android:layout_alignParentRight="true" />
+        android:layout_alignLeft="@+id/calender_button" />
 
     <ImageButton
         android:id="@+id/money_button"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_alignStart="@+id/signout"
-        android:layout_centerVertical="true"
+        android:layout_width="121dp"
+        android:layout_height="140dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/mate_button"
+        android:layout_marginEnd="53dp"
         android:background="@drawable/ovalbutton"
         app:srcCompat="@drawable/money"
-        android:layout_alignLeft="@+id/signout" />
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="53dp" />
 
     <ImageButton
         android:id="@+id/data_button"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_alignParentStart="true"
-        android:layout_centerVertical="true"
-        android:layout_marginStart="109dp"
+        android:layout_width="121dp"
+        android:layout_height="140dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/money_button"
+        android:layout_marginTop="122dp"
         android:background="@drawable/ovalbutton"
         android:scaleType="centerInside"
         app:srcCompat="@drawable/data"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="109dp" />
+        android:layout_alignLeft="@+id/money_button" />
 
     <ImageButton
         android:id="@+id/calender_button"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="121dp"
+        android:layout_height="140dp"
         android:layout_alignParentStart="true"
-        android:layout_centerVertical="true"
-        android:layout_marginStart="26dp"
+        android:layout_alignTop="@+id/data_button"
+        android:layout_marginStart="35dp"
         android:background="@drawable/ovalbutton"
         android:scaleType="centerCrop"
         app:srcCompat="@drawable/calendar"
         android:layout_alignParentLeft="true"
-        android:layout_marginLeft="26dp" />
+        android:layout_marginLeft="35dp" />
 
 </RelativeLayout>
