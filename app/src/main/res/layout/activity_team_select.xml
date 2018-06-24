@@ -12,10 +12,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:background="@drawable/gradient_2"
         android:text="設定"
-        android:layout_alignParentLeft="true" />
+        android:textSize="18sp" />
 
     <Button
         android:id="@+id/teamCreate"
@@ -23,20 +24,22 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:text="創建"
+        android:layout_alignParentRight="true"
         android:background="@drawable/gradient_2"
-        android:layout_alignParentRight="true" />
+        android:text="創建"
+        android:textSize="18sp" />
 
     <EditText
         android:id="@+id/teamName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:ems="10"
         android:hint="請在下方列表選擇隊伍"
         android:inputType="textPersonName"
-        android:layout_alignParentLeft="true" />
+        android:textSize="18sp" />
 
     <ListView
         android:id="@+id/listview"

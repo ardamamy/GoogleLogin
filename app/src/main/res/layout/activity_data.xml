@@ -23,6 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:text="離開" />
+        android:text="離開"
+        android:textSize="18sp" />
 
 </RelativeLayout>

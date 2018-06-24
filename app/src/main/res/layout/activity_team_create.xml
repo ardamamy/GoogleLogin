@@ -16,7 +16,8 @@
         android:layout_marginBottom="250dp"
         android:ems="10"
         android:hint="@string/str2"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/buttonCreate"
@@ -26,7 +27,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="175dp"
         android:background="@drawable/gradient_2"
-        android:text="創建" />
+        android:text="創建"
+        android:textSize="18sp" />
 
     <ImageView
         android:id="@+id/angview"

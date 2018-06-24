@@ -24,7 +24,8 @@
         android:layout_alignTop="@+id/textView2"
         android:layout_centerHorizontal="true"
         android:ems="10"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/textView5"
@@ -44,7 +45,8 @@
         android:layout_alignTop="@+id/textView5"
         android:layout_centerHorizontal="true"
         android:ems="10"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/textView6"
@@ -63,8 +65,9 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/editadditem"
         android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
         android:text="新增"
-        android:layout_alignParentRight="true" />
+        android:textSize="18sp" />
 
     <ListView
         android:id="@+id/trainitem"
@@ -78,11 +81,12 @@
         android:id="@+id/editadditem"
         android:layout_width="286dp"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/textView6"
         android:ems="10"
         android:inputType="textPersonName"
-        android:layout_alignParentLeft="true" />
+        android:textSize="24sp" />
 
     <Button
         android:id="@+id/setmenu"
@@ -90,6 +94,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:text="設定完成" />
+        android:text="設定完成"
+        android:textSize="18sp" />
 
 </RelativeLayout>

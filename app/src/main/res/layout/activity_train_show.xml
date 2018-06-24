@@ -68,7 +68,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:text="返回" />
+        android:text="返回"
+        android:textSize="18sp" />
 
     <ListView
         android:id="@+id/lvShowItem"
